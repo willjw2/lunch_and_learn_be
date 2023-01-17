@@ -36,7 +36,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'pry'
   gem 'figaro'
-  gem 'capybara', '>=2.15'
+  gem 'capybara'
   gem 'simplecov', require: false
   gem 'faker'
   gem 'factory_bot_rails'
@@ -57,3 +57,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'jsonapi-serializer'
+gem 'net-http'
