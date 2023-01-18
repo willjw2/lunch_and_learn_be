@@ -4,8 +4,8 @@ RSpec.describe CountryFacade do
   it '.all_countries', :vcr do
     countries = CountryFacade.all_countries
     expect(countries).to be_an(Array)
-    # require "pry"; binding.pry
   end
+
   it '.random_country', :vcr do
     countries = CountryFacade.all_countries
     country = CountryFacade.random_country
