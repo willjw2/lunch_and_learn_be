@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Get Country Recipes' do
+RSpec.describe 'Get Country Recipes', :vcr do
   it 'returns a country\'s recipes as json' do
       country = "Spain"
 

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe RecipeService do
-  it '.get_recipes' do
+  it '.get_recipes', :vcr do
     response = RecipeService.get_recipes('Germany')
     # require "pry"; binding.pry
     expect(response).to be_an Array

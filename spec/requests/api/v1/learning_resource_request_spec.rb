@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Get Country Learning Resources' do
-  it 'returns a country\'s learning resources as json' do
+  it 'returns a country\'s learning resources as json', :vcr do
       country = "Colombia"
 
       get "/api/v1/learning_resources?country=#{country}"

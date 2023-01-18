@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe CountryService do
-  it '.get_all_countries' do
+  it '.get_all_countries', :vcr do
     response = CountryService.get_all_countries
     expect(response).to be_an Array
     expect(response.first).to be_a(Hash)
