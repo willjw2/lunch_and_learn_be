@@ -38,6 +38,30 @@ RSpec.describe 'Get Country Recipes', :vcr do
 
     recipe = parsed_response[:data][0]
 
+    expect(recipe).to have_key(:id)
+    expect(recipe).to have_key(:type)
+    expect(recipe).to have_key(:attributes)
+    expect(recipe[:attributes]).to have_key(:title)
+    expect(recipe[:attributes]).to have_key(:url)
+    expect(recipe[:attributes]).to have_key(:country)
+    expect(recipe[:attributes]).to have_key(:image)
+
+    expect(recipe[:attributes]).to_not have_key(:images)
+    expect(recipe[:attributes]).to_not have_key(:source)
+    expect(recipe[:attributes]).to_not have_key(:dietLabels)
+    expect(recipe[:attributes]).to_not have_key(:ingredients)
+
     expect(recipe[:attributes][:country]).to eq('Thailand')
+  end
+  it 'returns an empty array if the country parameter is empty or a value that returns nothing' do
+    country = "LKDFNDLKVNSLKEBV"
+
+    get "/api/v1/recipes?country=#{country}"
+
+    expect(response).to be_successful
+
+    parsed_response = JSON.parse(response.body,symbolize_names: true)
+
+    expect(parsed_response[:data]).to eq([])
   end
 end

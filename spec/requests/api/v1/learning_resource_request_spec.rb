@@ -33,4 +33,15 @@ RSpec.describe 'Get Country Learning Resources' do
       expect(lr[:attributes][:video]).to_not have_key(:thumbnails)
       expect(lr[:attributes][:video]).to_not have_key(:channelId)
   end
+  it 'returns keys pointing to an empty object if no videos/images found', :vcr do
+    country = "NameofCountry"
+
+    get "/api/v1/learning_resources?country=#{country}"
+
+    expect(response).to be_successful
+    parsed_response = JSON.parse(response.body,symbolize_names: true)
+    expect(parsed_response[:data][:attributes][:country]).to eq('NameofCountry')
+    expect(parsed_response[:data][:attributes][:video]).to eq({})
+    expect(parsed_response[:data][:attributes][:images]).to eq([])
+  end
 end
