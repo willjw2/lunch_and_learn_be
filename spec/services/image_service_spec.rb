@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ImageService do
-  it '.get_images' do
+  it '.get_images', :vcr do
     response = ImageService.get_images('Germany')
     expect(response).to be_an Array
     expect(response.first).to be_a(Hash)

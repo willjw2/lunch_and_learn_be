@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe VideoFacade do
-  it '.video' do
+  it '.video', :vcr do
     video = VideoFacade.video('Portugal')
     expect(video).to be_an_instance_of(Video)
   end
