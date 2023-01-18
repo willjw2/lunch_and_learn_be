@@ -11,12 +11,12 @@ RSpec.describe User, type: :model do
     it { should have_many(:favorites) }
   end
   describe 'class methods' do
-    it '#user_api_key?' do
+    it '#user_api_key' do
       User.create!(name: "test", email: "testemail", api_key: "test_api_key")
       user = User.last
-      
-      expect(User.user_api_key?("test_api_key")).to eq(user.id)
-      expect(User.user_api_key?("not_a_valid_key")).to eq(false)
+
+      expect(User.user_api_key("test_api_key")).to eq(user.id)
+      expect(User.user_api_key("not_a_valid_key")).to eq(false)
     end
   end
 end

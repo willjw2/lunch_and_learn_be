@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :api_key, presence: true
   has_many :favorites
 
-  def self.user_api_key?(api_key)
+  def self.user_api_key(api_key)
     if User.where(api_key: api_key).empty?
       return false
     else
