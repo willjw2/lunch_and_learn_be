@@ -11,7 +11,7 @@ class Api::V1::UsersController < ApplicationController
       render json: {"errors": "unique email address must be used"}, status: 404
     end
   end
-  
+
 
 private
   def user_params

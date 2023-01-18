@@ -19,7 +19,7 @@
 3. Install gem packages: `bundle install`
 4. Setup the database: `rails db:create`
 
-##Where to get API keys
+## Where to get API keys
 - [Edamam API](https://developer.edamam.com/edamam-recipe-api) for recipe search
-- [Youtube API](https://developers.google.com/youtube/v3/getting-started)[Search Lists Endpoint](https://developers.google.com/youtube/v3/docs/search/list) for video search
+- [Youtube API](https://developers.google.com/youtube/v3/getting-started) [Search Lists Endpoint](https://developers.google.com/youtube/v3/docs/search/list) for video search
 - [Unsplash API](https://unsplash.com/documentation) for image search
